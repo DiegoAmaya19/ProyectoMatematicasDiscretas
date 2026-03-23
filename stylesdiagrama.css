@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+}
+
+.title-diagram {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.diagramas {
+    padding: 20px;
+    display: flex;
+    width: 100vw;
+    height: 30vh;
+}
+
+.diagram-and,
+.diagram-or,
+.diagram-not {
+    width: 33.33%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-lines,
+.div-bombillo {
+    width: 35%;
+    display: block;
+}
+
+.div-button-lines {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.div-button {
+    width: 25%;
+    height: 100%;
+}
+
+.btn {
+    margin-top: 5px;
+}
+
+.div-line {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.line-a {
+    height: 4px;
+    width: 100%;
+    margin: 0;
+    background-color: #000000;
+}
+
+.line-b {
+    height: 4px;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+.btn-activo {
+    background-color: #4caf50;
+    color: white;
+}
+
+.active {
+    background-color: #ebfc00;
+    box-shadow: 0 0 20px 10px #ffeb3b;
+    border: solid 1px #ebfc00;
+}
+
+.div-logica {
+    width: 30%;
+    border: black solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 100px 100px 0
+}
+
+.div-bombillo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-line-bombillo {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.line-bombillo {
+    background-color: black;
+    height: 4px;
+    width: 100%;
+}
+
+.div-luz {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.bombillo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: black solid 1px;
+}
+
+.or-line-a, .not-line {
+    height: 4px;
+    width: 100%;
+    margin: 0;
+    background-color: #000000;
+}
+
+.or-line-b {
+    height: 4px;
+    width: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+.div-logica-or {
+    margin-left: -20px;
+    width: 33%;
+    height: auto;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: 3px solid #000000;
+    color: white;
+
+    clip-path: polygon(
+            0% 0%,
+            15% 50%,
+            0% 100%,
+            100% 50%);
+}
+
+.or-line-bombillo, .not-line-bombillo {
+    background-color: black;
+    height: 4px;
+    width: 100%;
+    margin-left: -10px;
+}
+
+.bombillo-or, .bombillo-not {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: black solid 1px;
+    margin-left: -10px;
+}
+
+.div-lines-not{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.div-logica-not {
+    margin-left: -25px;
+    width: 35%;
+    height: auto;
+    background: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    border: 3px solid #000000;
+    color: white;
+
+    clip-path: polygon(
+            15% 0%,
+            15% 50%,
+            15% 100%,
+            100% 50%);
+}
+
+.icon-not{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(155, 155, 155);
+    border: solid 4px black;
+    border-radius: 50%;
+    position: absolute;
+    right: 150px;
+    top: 155px;
+}
+
+.luz-encendida {
+    background-color: #ebfc00;
+    box-shadow: 0 0 20px 15px #ffeb3b;
+    border: solid 1px #ebfc00;
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador lógico</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Simulador Lógico Avanzado</h1>
+        <p>Circuitos básicos (AND, OR, NOT) y varios combinados. Entradas 0/1; usa la tabla de verdad para probar cada fila.</p>
+    </header>
+
+    <div class="simulation-grid">
+
+        <section class="simulation-card" data-sim="and">
+            <h2>AND (A ∧ B)</h2>
+            <svg viewBox="0 0 360 160" class="gate-canvas">
+                <!-- AND: arco elíptico rx>ry → más ancho, misma altura -->
+                <path class="gate" d="M100 10 L100 150 A110 70 0 0 0 130 10 Z" />
+                <text x="132" y="88" class="gate-label">AND</text>
+                <path class="wire" data-input="A" d="M20 35 L100 35" />
+                <path class="wire" data-input="B" d="M20 125 L100 125" />
+                <path class="wire" data-input="OUT" d="M225 80 L320 80" />
+                <circle class="bulb-element" cx="335" cy="80" r="20" />
+            </svg>
+            <div class="controls">
+                <label>A: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="A"></label>
+                <label>B: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="B"></label>
+                <div class="output-status">Salida: <span class="output-value">0 (OFF)</span></div>
+            </div>
+            <div class="table-container">
+                <h3>Tabla de Verdad</h3>
+                <table class="truth-table">
+                    <thead><tr><th>A</th><th>B</th><th>Salida</th><th>Probar</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="simulation-card" data-sim="or">
+            <h2>OR (A ∨ B)</h2>
+            <svg viewBox="0 0 360 160" class="gate-canvas">
+                <path class="gate" d="M100 10 Q120 45 100 80 Q120 115 100 150 A110 70 0 0 0 100 10 Z" />
+                <text x="132" y="88" class="gate-label">OR</text>
+                <path class="wire" data-input="A" d="M20 35 L110 35" />
+                <path class="wire" data-input="B" d="M20 125 L110 125" />
+                <path class="wire" data-input="OUT" d="M210 80 L320 80" />
+                <circle class="bulb-element" cx="335" cy="80" r="20" />
+            </svg>
+            <div class="controls">
+                <label>A: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="A"></label>
+                <label>B: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="B"></label>
+                <div class="output-status">Salida: <span class="output-value">0 (OFF)</span></div>
+            </div>
+            <div class="table-container">
+                <h3>Tabla de Verdad</h3>
+                <table class="truth-table">
+                    <thead><tr><th>A</th><th>B</th><th>Salida</th><th>Probar</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="simulation-card" data-sim="not">
+            <h2>NOT (¬A)</h2>
+            <svg viewBox="0 0 360 160" class="gate-canvas">
+                <path class="wire" data-input="A" d="M20 80 L108 80" />
+                <!-- NOT: triángulo + burbuja de negación -->
+                <path class="gate" d="M108 42 L172 80 L108 118 Z" />
+                <circle class="gate-circle" cx="188" cy="80" r="12" />
+                <path class="wire" data-input="OUT" d="M202 80 L310 80" />
+                <circle class="bulb-element" cx="335" cy="80" r="20" />
+            </svg>
+            <div class="controls">
+                <label>A: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="A"></label>
+                <div class="output-status">Salida: <span class="output-value">1 (ON)</span></div>
+            </div>
+            <div class="table-container">
+                <h3>Tabla de Verdad</h3>
+                <table class="truth-table">
+                    <thead><tr><th>A</th><th>Salida</th><th>Probar</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="simulation-card" data-sim="combo">
+            <h2>COMBINADO ((A ∧ B) ∨ ¬C)</h2>
+            <svg viewBox="0 0 450 240" class="gate-canvas">
+                <path class="wire" data-input="A" d="M20 50 L100 50" />
+                <path class="wire" data-input="B" d="M20 110 L100 110" />
+                <path class="wire" data-input="C" d="M20 170 L100 170" />
+
+                <path class="gate" d="M100 26 L100 154 A96 64 0 0 0 100 26 Z" />
+                <text x="128" y="92" class="gate-label">AND</text>
+                <path class="wire" data-input="t1" d="M196 90 L250 90" />
+
+                <path class="gate" d="M100 156 L158 184 L100 212 Z" />
+                <circle class="gate-circle" cx="169" cy="184" r="11" />
+                <text x="108" y="188" class="gate-label gate-label-sm">NOT</text>
+                <path class="wire" data-input="t2" d="M180 184 L250 184" />
+
+                <path class="gate" d="M250 54 Q270 95 250 135 Q270 175 250 216 A122 81 0 0 0 250 54 Z" />
+                <text x="278" y="138" class="gate-label">OR</text>
+                <path class="wire" data-input="OUT" d="M372 135 L415 135" />
+
+                <circle class="bulb-element" cx="415" cy="135" r="20" />
+            </svg>
+            <div class="controls">
+                <label>A: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="A"></label>
+                <label>B: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="B"></label>
+                <label>C: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="C"></label>
+                <div class="output-status">Salida: <span class="output-value">0 (OFF)</span></div>
+            </div>
+            <div class="table-container">
+                <h3>Tabla de Verdad</h3>
+                <table class="truth-table">
+                    <thead><tr><th>A</th><th>B</th><th>C</th><th>Salida</th><th>Probar</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="simulation-card" data-sim="combo2">
+            <h2>COMBINADO 2 ((A ∨ B) ∧ C)</h2>
+            <svg viewBox="0 0 450 240" class="gate-canvas">
+                <path class="wire" data-input="A" d="M20 50 L100 50" />
+                <path class="wire" data-input="B" d="M20 110 L100 110" />
+                <path class="wire" data-input="C" d="M20 150 L250 150" />
+
+                <path class="gate" d="M100 32 Q120 65 100 95 Q120 125 100 158 A96 64 0 0 0 100 32 Z" />
+                <text x="128" y="98" class="gate-label">OR</text>
+                <path class="wire" data-input="t1" d="M196 95 L250 95" />
+
+                <path class="gate" d="M250 66 L250 174 A81 54 0 0 0 250 66 Z" />
+                <text x="276" y="122" class="gate-label">AND</text>
+                <path class="wire" data-input="OUT" d="M331 120 L415 120" />
+
+                <circle class="bulb-element" cx="415" cy="120" r="20" />
+            </svg>
+            <div class="controls">
+                <label>A: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="A"></label>
+                <label>B: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="B"></label>
+                <label>C: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="C"></label>
+                <div class="output-status">Salida: <span class="output-value">0 (OFF)</span></div>
+            </div>
+            <div class="table-container">
+                <h3>Tabla de Verdad</h3>
+                <table class="truth-table">
+                    <thead><tr><th>A</th><th>B</th><th>C</th><th>Salida</th><th>Probar</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="simulation-card" data-sim="combo3">
+            <h2>COMBINADO 3 ((A ∧ B) ∧ (C ∨ D))</h2>
+            <svg viewBox="0 0 500 280" class="gate-canvas">
+                <path class="wire" data-input="A" d="M20 50 L100 50" />
+                <path class="wire" data-input="B" d="M20 110 L100 110" />
+                <path class="wire" data-input="C" d="M20 190 L100 190" />
+                <path class="wire" data-input="D" d="M20 250 L100 250" />
+
+                <path class="gate" d="M100 26 L100 154 A96 64 0 0 0 100 26 Z" />
+                <text x="128" y="92" class="gate-label">AND</text>
+                <path class="wire" data-input="t1" d="M196 90 L260 90" />
+
+                <path class="gate" d="M100 165 Q120 200 100 218 Q120 236 100 268 A77 51 0 0 0 100 165 Z" />
+                <text x="128" y="218" class="gate-label">OR</text>
+                <path class="wire" data-input="t2" d="M177 216 L260 216" />
+
+                <path class="gate" d="M260 66 L260 214 A111 74 0 0 0 260 66 Z" />
+                <text x="288" y="142" class="gate-label">AND</text>
+                <path class="wire" data-input="OUT" d="M371 140 L425 140" />
+
+                <circle class="bulb-element" cx="425" cy="140" r="20" />
+            </svg>
+            <div class="controls">
+                <label>A: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="A"></label>
+                <label>B: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="B"></label>
+                <label>C: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="C"></label>
+                <label>D: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="D"></label>
+                <div class="output-status">Salida: <span class="output-value">0 (OFF)</span></div>
+            </div>
+            <div class="table-container">
+                <h3>Tabla de Verdad</h3>
+                <table class="truth-table">
+                    <thead><tr><th>A</th><th>B</th><th>C</th><th>D</th><th>Salida</th><th>Probar</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="simulation-card" data-sim="combo4">
+            <h2>COMBINADO 4 (¬(A ∨ B) ∧ C)</h2>
+            <svg viewBox="0 0 520 240" class="gate-canvas">
+                <path class="wire" data-input="A" d="M20 50 L100 50" />
+                <path class="wire" data-input="B" d="M20 110 L100 110" />
+                <path class="wire" data-input="C" d="M20 170 L340 170" />
+
+                <path class="gate" d="M100 32 Q120 65 100 95 Q120 125 100 158 A96 64 0 0 0 100 32 Z" />
+                <text x="128" y="98" class="gate-label">OR</text>
+                <path class="wire" data-input="t1" d="M196 95 L240 95" />
+
+                <path class="gate" d="M240 48 L298 90 L240 132 Z" />
+                <circle class="gate-circle" cx="314" cy="90" r="12" />
+                <text x="248" y="94" class="gate-label gate-label-sm">NOT</text>
+                <path class="wire" data-input="t2" d="M326 90 L340 90" />
+
+                <path class="gate" d="M340 56 L340 184 A96 64 0 0 0 340 56 Z" />
+                <text x="368" y="122" class="gate-label">AND</text>
+                <path class="wire" data-input="OUT" d="M436 120 L495 120" />
+
+                <circle class="bulb-element" cx="495" cy="120" r="20" />
+            </svg>
+            <div class="controls">
+                <label>A: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="A"></label>
+                <label>B: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="B"></label>
+                <label>C: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="C"></label>
+                <div class="output-status">Salida: <span class="output-value">0 (OFF)</span></div>
+            </div>
+            <div class="table-container">
+                <h3>Tabla de Verdad</h3>
+                <table class="truth-table">
+                    <thead><tr><th>A</th><th>B</th><th>C</th><th>Salida</th><th>Probar</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="simulation-card" data-sim="combo5">
+            <h2>COMBINADO 5 (A ∧ (B ∨ ¬C))</h2>
+            <svg viewBox="0 0 480 240" class="gate-canvas">
+                <path class="wire" data-input="A" d="M20 50 L280 50" />
+                <path class="wire" data-input="B" d="M20 120 L150 120" />
+                <path class="wire" data-input="C" d="M20 180 L80 180" />
+
+                <path class="gate" d="M80 155 L130 180 L80 205 Z" />
+                <circle class="gate-circle" cx="141" cy="180" r="10" />
+                <text x="88" y="184" class="gate-label gate-label-sm">NOT</text>
+                <path class="wire" data-input="t1" d="M151 180 L150 180" />
+
+                <path class="gate" d="M150 92 Q170 130 150 150 Q170 170 150 208 A87 58 0 0 0 150 92 Z" />
+                <text x="176" y="152" class="gate-label gate-label-sm">OR</text>
+                <path class="wire" data-input="t2" d="M237 150 L280 150 L280 106" />
+
+                <path class="gate" d="M280 26 L280 134 A81 54 0 0 0 280 26 Z" />
+                <text x="306" y="82" class="gate-label gate-label-sm">AND</text>
+                <path class="wire" data-input="OUT" d="M361 80 L430 80" />
+
+                <circle class="bulb-element" cx="430" cy="80" r="18" />
+            </svg>
+            <div class="controls">
+                <label>A: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="A"></label>
+                <label>B: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="B"></label>
+                <label>C: <input type="number" min="0" max="1" value="0" class="logic-input" data-input="C"></label>
+                <div class="output-status">Salida: <span class="output-value">0 (OFF)</span></div>
+            </div>
+            <div class="table-container">
+                <h3>Tabla de Verdad</h3>
+                <table class="truth-table">
+                    <thead><tr><th>A</th><th>B</th><th>C</th><th>Salida</th><th>Probar</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="./logica.js"></script>
+</body>
+
+</html>
