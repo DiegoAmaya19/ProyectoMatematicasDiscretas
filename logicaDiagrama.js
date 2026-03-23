@@ -278,3 +278,124 @@ function verificarCombo3() {
     combo3CableBombillo.classList.toggle('active', encender);
     combo3Bombillo.classList.toggle('luz-encendida', encender);
 }
+
+// Combo 4: NOT (A OR B)
+const combo4CableA = document.getElementById('combo4-line-a');
+const combo4BotonA1 = document.getElementById('combo4-btn-a1');
+const combo4BotonA0 = document.getElementById('combo4-btn-a0');
+const combo4CableB = document.getElementById('combo4-line-b');
+const combo4BotonB1 = document.getElementById('combo4-btn-b1');
+const combo4BotonB0 = document.getElementById('combo4-btn-b0');
+const combo4Bombillo = document.getElementById('bombillo-combo4');
+const combo4CableBombillo = document.getElementById('combo4-line-bombillo');
+let combo4A = 0; let combo4B = 0;
+
+function setCombo4A(valor) {
+    combo4A = valor;
+    const activa = (valor === 1);
+    combo4CableA.classList.toggle('active', activa);
+    combo4BotonA1.classList.toggle('btn-activo', activa);
+    combo4BotonA0.classList.toggle('btn-activo', !activa);
+    verificarCombo4();
+}
+function setCombo4B(valor) {
+    combo4B = valor;
+    const activa = (valor === 1);
+    combo4CableB.classList.toggle('active', activa);
+    combo4BotonB1.classList.toggle('btn-activo', activa);
+    combo4BotonB0.classList.toggle('btn-activo', !activa);
+    verificarCombo4();
+}
+function verificarCombo4() {
+    const encender = !(combo4A === 1 || combo4B === 1);
+    combo4CableBombillo.classList.toggle('active', encender);
+    combo4Bombillo.classList.toggle('luz-encendida', encender);
+}
+
+// Combo 5: A OR (B AND C)
+const combo5CableA = document.getElementById('combo5-line-a');
+const combo5BotonA1 = document.getElementById('combo5-btn-a1');
+const combo5BotonA0 = document.getElementById('combo5-btn-a0');
+const combo5CableB = document.getElementById('combo5-line-b');
+const combo5BotonB1 = document.getElementById('combo5-btn-b1');
+const combo5BotonB0 = document.getElementById('combo5-btn-b0');
+const combo5CableC = document.getElementById('combo5-line-c');
+const combo5BotonC1 = document.getElementById('combo5-btn-c1');
+const combo5BotonC0 = document.getElementById('combo5-btn-c0');
+const combo5Bombillo = document.getElementById('bombillo-combo5');
+const combo5CableBombillo = document.getElementById('combo5-line-bombillo');
+let combo5A = 0; let combo5B = 0; let combo5C = 0;
+
+function setCombo5A(valor) {
+    combo5A = valor;
+    const activa = (valor === 1);
+    combo5CableA.classList.toggle('active', activa);
+    combo5BotonA1.classList.toggle('btn-activo', activa);
+    combo5BotonA0.classList.toggle('btn-activo', !activa);
+    verificarCombo5();
+}
+function setCombo5B(valor) {
+    combo5B = valor;
+    const activa = (valor === 1);
+    combo5CableB.classList.toggle('active', activa);
+    combo5BotonB1.classList.toggle('btn-activo', activa);
+    combo5BotonB0.classList.toggle('btn-activo', !activa);
+    verificarCombo5();
+}
+function setCombo5C(valor) {
+    combo5C = valor;
+    const activa = (valor === 1);
+    combo5CableC.classList.toggle('active', activa);
+    combo5BotonC1.classList.toggle('btn-activo', activa);
+    combo5BotonC0.classList.toggle('btn-activo', !activa);
+    verificarCombo5();
+}
+function verificarCombo5() {
+    const encender = combo5A === 1 || (combo5B === 1 && combo5C === 1);
+    combo5CableBombillo.classList.toggle('active', encender);
+    combo5Bombillo.classList.toggle('luz-encendida', encender);
+}
+
+// Combo 6: A AND (B OR C)
+const combo6CableA = document.getElementById('combo6-line-a');
+const combo6BotonA1 = document.getElementById('combo6-btn-a1');
+const combo6BotonA0 = document.getElementById('combo6-btn-a0');
+const combo6CableB = document.getElementById('combo6-line-b');
+const combo6BotonB1 = document.getElementById('combo6-btn-b1');
+const combo6BotonB0 = document.getElementById('combo6-btn-b0');
+const combo6CableC = document.getElementById('combo6-line-c');
+const combo6BotonC1 = document.getElementById('combo6-btn-c1');
+const combo6BotonC0 = document.getElementById('combo6-btn-c0');
+const combo6Bombillo = document.getElementById('bombillo-combo6');
+const combo6CableBombillo = document.getElementById('combo6-line-bombillo');
+let combo6A = 0; let combo6B = 0; let combo6C = 0;
+
+function setCombo6A(valor) {
+    combo6A = valor;
+    const activa = (valor === 1);
+    combo6CableA.classList.toggle('active', activa);
+    combo6BotonA1.classList.toggle('btn-activo', activa);
+    combo6BotonA0.classList.toggle('btn-activo', !activa);
+    verificarCombo6();
+}
+function setCombo6B(valor) {
+    combo6B = valor;
+    const activa = (valor === 1);
+    combo6CableB.classList.toggle('active', activa);
+    combo6BotonB1.classList.toggle('btn-activo', activa);
+    combo6BotonB0.classList.toggle('btn-activo', !activa);
+    verificarCombo6();
+}
+function setCombo6C(valor) {
+    combo6C = valor;
+    const activa = (valor === 1);
+    combo6CableC.classList.toggle('active', activa);
+    combo6BotonC1.classList.toggle('btn-activo', activa);
+    combo6BotonC0.classList.toggle('btn-activo', !activa);
+    verificarCombo6();
+}
+function verificarCombo6() {
+    const encender = (combo6A === 1) && (combo6B === 1 || combo6C === 1);
+    combo6CableBombillo.classList.toggle('active', encender);
+    combo6Bombillo.classList.toggle('luz-encendida', encender);
+}

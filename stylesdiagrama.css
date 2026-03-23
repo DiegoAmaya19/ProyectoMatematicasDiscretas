@@ -364,7 +364,7 @@ table tr:nth-child(even) {
     font-size: 16px;
 }
 
-.combos{
+.combos {
     width: 100%;
 }
 
@@ -382,14 +382,55 @@ table tr:nth-child(even) {
     color: white;
 }
 
-.div-line-bombillo2{
+.div-line-bombillo2 {
     width: 30%;
 }
 
-.div-line-bombillo3{
+.div-line-bombillo3 {
     position: absolute;
     top: 400px;
     left: 400px;
     height: 400px;
     width: 4px;
+}
+
+/* CSS NUEVO PARA LA SEGUNDA SECCION DE COMBOS */
+.combo-nor, .combo-or-and, .combo-and-or2 {
+    width: 33.33%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.combo4-line-a, .combo4-line-b,
+.combo5-line-a, .combo5-line-b, .combo5-line-c,
+.combo6-line-a, .combo6-line-b, .combo6-line-c {
+    height: 4px;
+    width: 100%;
+    margin: 0;
+    background-color: #000000;
+}
+
+.combo4-line-bombillo, .combo5-line-bombillo, .combo6-line-bombillo {
+    background-color: black;
+    height: 4px;
+    width: 100%;
+}
+
+.bombillo-combo4, .bombillo-combo5, .bombillo-combo6 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: black solid 1px;
+}
+
+.tabla-combo4, .tabla-combo5, .tabla-combo6 {
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+}
+
+.tabla-combo4 h2, .tabla-combo5 h2, .tabla-combo6 h2 {
+    margin-bottom: 15px;
+    font-size: 16px;
 }
