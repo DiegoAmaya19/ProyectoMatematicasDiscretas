@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 .title-diagram {
@@ -123,7 +124,8 @@
     border: black solid 1px;
 }
 
-.or-line-a, .not-line {
+.or-line-a,
+.not-line {
     height: 4px;
     width: 100%;
     margin: 0;
@@ -150,21 +152,22 @@
     border: 3px solid #000000;
     color: white;
 
-    clip-path: polygon(
-            0% 0%,
+    clip-path: polygon(0% 0%,
             15% 50%,
             0% 100%,
             100% 50%);
 }
 
-.or-line-bombillo, .not-line-bombillo {
+.or-line-bombillo,
+.not-line-bombillo {
     background-color: black;
     height: 4px;
     width: 100%;
     margin-left: -10px;
 }
 
-.bombillo-or, .bombillo-not {
+.bombillo-or,
+.bombillo-not {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -172,7 +175,7 @@
     margin-left: -10px;
 }
 
-.div-lines-not{
+.div-lines-not {
     width: 35%;
     height: 100%;
     display: flex;
@@ -192,26 +195,170 @@
     border: 3px solid #000000;
     color: white;
 
-    clip-path: polygon(
-            15% 0%,
+    clip-path: polygon(15% 0%,
             15% 50%,
             15% 100%,
             100% 50%);
 }
 
-.icon-not{
+.icon-not {
     width: 30px;
     height: 30px;
     background-color: rgb(155, 155, 155);
     border: solid 4px black;
     border-radius: 50%;
     position: absolute;
-    right: 150px;
-    top: 155px;
+    right: 160px;
+    top: 135px;
 }
 
 .luz-encendida {
     background-color: #ebfc00;
     box-shadow: 0 0 20px 15px #ffeb3b;
     border: solid 1px #ebfc00;
+}
+
+.diagramas-combos {
+    padding: 20px;
+    display: flex;
+    width: 100vw;
+    height: 45vh;
+    border: #000000 solid 1px;
+    margin: 0;
+}
+
+.combo-and-or,
+.combo-or-and-not,
+.combo-not-and {
+    width: 33.33%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-lines-combo {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.div-lines-combo .div-button-lines {
+    height: 30%;
+}
+
+.div-logica-combo {
+    width: 30%;
+    border: black solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 100px 100px 0;
+    font-size: 16px;
+}
+
+.div-logica-combo h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.combo1-line-a,
+.combo1-line-b,
+.combo1-line-c,
+.combo2-line-a,
+.combo2-line-b,
+.combo2-line-c,
+.combo3-line-a,
+.combo3-line-b {
+    height: 4px;
+    width: 100%;
+    margin: 0;
+    background-color: #000000;
+}
+
+.combo1-line-bombillo,
+.combo2-line-bombillo,
+.combo3-line-bombillo {
+    background-color: black;
+    height: 4px;
+    width: 100%;
+}
+
+.bombillo-combo1,
+.bombillo-combo2,
+.bombillo-combo3 {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: black solid 1px;
+}
+
+.tablas-diagramas-bases {
+    padding: 20px;
+    display: flex;
+    width: 100vw;
+    height: auto;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.tabla-and,
+.tabla-or,
+.tabla-not {
+    text-align: center;
+}
+
+.tabla-and h2,
+.tabla-or h2,
+.tabla-not h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: white;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+table td {
+    padding: 10px 15px;
+    border: 1px solid #000;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tablas-diagramas-combos {
+    padding: 20px;
+    display: flex;
+    width: 100vw;
+    height: auto;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.tabla-combo1,
+.tabla-combo2,
+.tabla-combo3 {
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+}
+
+.tabla-combo1 h2,
+.tabla-combo2 h2,
+.tabla-combo3 h2 {
+    margin-bottom: 15px;
+    font-size: 16px;
 }

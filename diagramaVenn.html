@@ -128,6 +128,396 @@
 
     </div>
 
+    <div class="tablas-diagramas-bases">
+        <div class="tabla-and">
+            <h2>Tabla AND</h2>
+            <table border="1">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A ∧ B</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tabla-or">
+            <h2>Tabla OR</h2>
+            <table border="1">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A ∨ B</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tabla-not">
+            <h2>Tabla NOT</h2>
+            <table border="1">
+                <tr>
+                    <th>A</th>
+                    <th>¬ A</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="diagramas-combos">
+        
+        <div class="combo-and-or">
+            <div class="div-lines-combo">
+                <div class="div-button-lines">
+                    <div class="div-button">
+                        <button id="combo1-btn-a1" class="btn" onclick="setCombo1A(1)">1</button>
+                        <button id="combo1-btn-a0" class="btn" onclick="setCombo1A(0)">0</button>
+                    </div>
+                    <div class="div-line">
+                        <hr class="combo1-line-a" id="combo1-line-a">
+                    </div>
+                </div>
+                <div class="div-button-lines">
+                    <div class="div-button">
+                        <button id="combo1-btn-b1" class="btn" onclick="setCombo1B(1)">1</button>
+                        <button id="combo1-btn-b0" class="btn" onclick="setCombo1B(0)">0</button>
+                    </div>
+                    <div class="div-line">
+                        <hr class="combo1-line-b" id="combo1-line-b">
+                    </div>
+                </div>
+                <div class="div-button-lines">
+                    <div class="div-button">
+                        <button id="combo1-btn-c1" class="btn" onclick="setCombo1C(1)">1</button>
+                        <button id="combo1-btn-c0" class="btn" onclick="setCombo1C(0)">0</button>
+                    </div>
+                    <div class="div-line">
+                        <hr class="combo1-line-c" id="combo1-line-c">
+                    </div>
+                </div>
+            </div>
+            <div class="div-logica-combo">
+                <h1>A ∧ B ∨ C</h1>
+            </div>
+            <div class="div-bombillo">
+                <div class="div-line-bombillo">
+                    <hr class="combo1-line-bombillo" id="combo1-line-bombillo">
+                </div>
+                <div class="div-luz">
+                    <div class="bombillo-combo1" id="bombillo-combo1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="combo-or-and-not">
+            <div class="div-lines-combo">
+                <div class="div-button-lines">
+                    <div class="div-button">
+                        <button id="combo2-btn-a1" class="btn" onclick="setCombo2A(1)">1</button>
+                        <button id="combo2-btn-a0" class="btn" onclick="setCombo2A(0)">0</button>
+                    </div>
+                    <div class="div-line">
+                        <hr class="combo2-line-a" id="combo2-line-a">
+                    </div>
+                </div>
+                <div class="div-button-lines">
+                    <div class="div-button">
+                        <button id="combo2-btn-b1" class="btn" onclick="setCombo2B(1)">1</button>
+                        <button id="combo2-btn-b0" class="btn" onclick="setCombo2B(0)">0</button>
+                    </div>
+                    <div class="div-line">
+                        <hr class="combo2-line-b" id="combo2-line-b">
+                    </div>
+                </div>
+                <div class="div-button-lines">
+                    <div class="div-button">
+                        <button id="combo2-btn-c1" class="btn" onclick="setCombo2C(1)">1</button>
+                        <button id="combo2-btn-c0" class="btn" onclick="setCombo2C(0)">0</button>
+                    </div>
+                    <div class="div-line">
+                        <hr class="combo2-line-c" id="combo2-line-c">
+                    </div>
+                </div>
+            </div>
+            <div class="div-logica-combo">
+                <h1>A ∨ B ∧ ¬ C</h1>
+            </div>
+            <div class="div-bombillo">
+                <div class="div-line-bombillo">
+                    <hr class="combo2-line-bombillo" id="combo2-line-bombillo">
+                </div>
+                <div class="div-luz">
+                    <div class="bombillo-combo2" id="bombillo-combo2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="combo-not-and">
+            <div class="div-lines-combo">
+                <div class="div-button-lines">
+                    <div class="div-button">
+                        <button id="combo3-btn-a1" class="btn" onclick="setCombo3A(1)">1</button>
+                        <button id="combo3-btn-a0" class="btn" onclick="setCombo3A(0)">0</button>
+                    </div>
+                    <div class="div-line">
+                        <hr class="combo3-line-a" id="combo3-line-a">
+                    </div>
+                </div>
+                <div class="div-button-lines">
+                    <div class="div-button">
+                        <button id="combo3-btn-b1" class="btn" onclick="setCombo3B(1)">1</button>
+                        <button id="combo3-btn-b0" class="btn" onclick="setCombo3B(0)">0</button>
+                    </div>
+                    <div class="div-line">
+                        <hr class="combo3-line-b" id="combo3-line-b">
+                    </div>
+                </div>
+            </div>
+            <div class="div-logica-combo">
+                <h1>¬ (A ∧ B)</h1>
+            </div>
+            <div class="div-bombillo">
+                <div class="div-line-bombillo">
+                    <hr class="combo3-line-bombillo" id="combo3-line-bombillo">
+                </div>
+                <div class="div-luz">
+                    <div class="bombillo-combo3" id="bombillo-combo3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tablas-diagramas-combos">
+        <div class="tabla-combo1">
+            <h2>(A ∧ B) ∨ C Truth Table</h2>
+            <table border="1">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>A ∧ B</th>
+                    <th>(A ∧ B) ∨ C</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tabla-combo2">
+            <h2>(A ∨ B) ∧ ¬ C Truth Table</h2>
+            <table border="1">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>A ∨ B</th>
+                    <th>¬ C</th>
+                    <th>(A ∨ B) ∧ ¬ C</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tabla-combo3">
+            <h2>¬ (A ∧ B) Truth Table</h2>
+            <table border="1">
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A ∧ B</th>
+                    <th>¬ (A ∧ B)</th>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
     <script src="./logicaDiagrama.js"></script>
 </body>
 
