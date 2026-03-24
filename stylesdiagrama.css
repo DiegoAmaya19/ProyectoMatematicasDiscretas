@@ -233,8 +233,8 @@ body {
     border: solid 4px black;
     border-radius: 50%;
     position: absolute;
-    right: 160px;
-    top: 300px;
+    right: 150px;
+    top: 255px;
 }
 
 .luz-encendida {
